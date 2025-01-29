@@ -22,7 +22,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
 client = paho.Client(
     protocol=paho.MQTTv5,
     callback_api_version=paho.CallbackAPIVersion.VERSION2,
-    client_id="",
+    client_id="my_garage_subscriber",
     userdata=None
 )
 
@@ -41,6 +41,6 @@ client.on_message = on_message
 # Set TLS and credentials before connecting
 client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
 client.username_pw_set(f"{USER_NAME}", f"{PASSWORD}")
-client.connect(f"{HOST_NAME}", int(PORT), clean_start=False)
+client.connect(f"{HOST_NAME}", int(PORT),keepalive=60,clean_start=False)
 
 client.loop_forever()
