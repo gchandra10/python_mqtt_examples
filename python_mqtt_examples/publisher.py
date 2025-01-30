@@ -40,7 +40,7 @@ client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
 client.username_pw_set(f"{USER_NAME}", f"{PASSWORD}")
 client.connect(f"{HOST_NAME}", int(PORT))
 
-# Start the loop to process callbacks
+# loop_start triggers the on_message, on_publish and on_connect callbacks
 client.loop_start()
 
 while True:

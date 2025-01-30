@@ -67,6 +67,8 @@ client.username_pw_set(USER_NAME, PASSWORD)
 
 try:
     client.connect(HOST_NAME, PORT)
+    
+    # loop_start triggers the on_message, on_publish and on_connect callbacks
     client.loop_start()
 
     # Wait for connection

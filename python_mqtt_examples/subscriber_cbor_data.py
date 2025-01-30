@@ -89,8 +89,8 @@ try:
         clean_start=False
     )
     
-    # Start the loop
-    client.loop_forever()  # Using loop_forever() for blocking operation
+    # Start the loop, Using loop_forever() for blocking operation
+    client.loop_forever()  
 
 except KeyboardInterrupt:
     print("\nDisconnecting from broker")

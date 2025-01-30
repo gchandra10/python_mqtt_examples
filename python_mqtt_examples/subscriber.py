@@ -43,4 +43,6 @@ client.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
 client.username_pw_set(f"{USER_NAME}", f"{PASSWORD}")
 client.connect(f"{HOST_NAME}", int(PORT),keepalive=60,clean_start=False)
 
+# loop_forever triggers the on_message, on_subscribe and on_connect callbacks
+# for subscribers loop_forever is used instead of loop_start as its simpler to implement.
 client.loop_forever()
