@@ -2,24 +2,17 @@
 
 Create free account [hivemq.com](https://console.hivemq.cloud/)
 
-Using ```paho-mqtt``` Python library
 
-**Fork and Clone the project**
+**Open VSCode IOT Workspace**
+
+- Fork and Clone the project
 
 ```
 git clone <your repo>
 ```
 
-**Mac/Linux**
-
 ```
-cd python_mqtt_examples/python_mqtt_examples 
-```
-
-**Windows**
-
-```
-cd python_mqtt_examples\python_mqtt_examples 
+cd python_mqtt_examples 
 ```
 
 **Rename the .env_template to .env**
@@ -31,25 +24,27 @@ Update the values
 **Update Repo**
 
 ```
-poetry shell
-poetry update
+uv sync
 ```
 
 **Run Publisher**
 
+Goto Terminal
+
 ```
-poetry run python publisher.py
+uv run python publisher.py
 ```
+
+Open Second Terminal
 
 **Run Subscriber**
 ```
-poetry run python subscriber.py
+uv run python subscriber.py
 ```
 
 **Add missing libraries (example)**
 
 ```
-poetry add paho-mqtt
-poetry add python-dotenv
+uv add paho-mqtt
+uv add python-dotenv
 ```
-
