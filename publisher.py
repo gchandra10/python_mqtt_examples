@@ -30,7 +30,7 @@ sensor_data = {"location": "room1"}
 
 client = paho.Client(protocol=paho.MQTTv5,
                     callback_api_version=paho.CallbackAPIVersion.VERSION2,
-                    client_id="",
+                    client_id="sensor_publisher_001",
                     userdata=sensor_data)
 
 client.on_publish = on_publish
